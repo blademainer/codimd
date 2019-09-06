@@ -7,6 +7,7 @@ COPY . ./
 RUN yarn install --non-interactive --pure-lockfile && \
     yarn build
 
+RUN cp ./deployments/docker-entrypoint.sh ./
 # ----------------------------------------------------
 # Runtime Stage
 FROM node:8.15.1 AS RUNTIME
